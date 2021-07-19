@@ -21,7 +21,7 @@ function Signup() {
     })
 
     const onSubmit =(data)=>{ //send a request to check signup data, if there has not error then create a account, 
-        axios.post("http://localhost:8000/auth/signup",data)
+        axios.post("https://groupomania-project-api.herokuapp.com/auth/signup",data)
         .then((response)=>{
             console.log(response);
             history.push('/');    

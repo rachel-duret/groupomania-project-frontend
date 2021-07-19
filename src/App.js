@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     //检测本地存储是否有token， 有的话就把authState 变成true  send a request to check is there has a token in localstorage or not. 
-    axios.get('http://localhost:8000/auth/info',
+    axios.get('https://groupomania-project-api.herokuapp.com/auth/info',
     {
       headers:{
         accessToken: localStorage.getItem("accessToken"),              

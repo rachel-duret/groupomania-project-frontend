@@ -21,13 +21,13 @@ function Post() {
   
 
   useEffect(()=>{
-    axios.get(`http://localhost:8000/posts/byId/${id}`)
+    axios.get(`https://groupomania-project-api.herokuapp.com/posts/byId/${id}`)
       .then((response)=>{
         setPostObject(response.data);
         console.log(response);
       },);
 
-      axios.get(`http://localhost:8000/comments/${id}`)
+      axios.get(`https://groupomania-project-api.herokuapp.com/comments/${id}`)
       .then((response)=>{
         setComments(response.data);
       });
@@ -36,7 +36,7 @@ function Post() {
   const addComment = ()=>{
 
   
-    axios.post('http://localhost:8000/comments', {
+    axios.post('https://groupomania-project-api.herokuapp.com/comments', {
       commentBody:newComment ,
        PostId:id
       },
@@ -68,7 +68,7 @@ function Post() {
 /////////      fonction for delete one post
   const deleteOnePost = (id) => {
     console.log(id);
-    axios.delete(`http://localhost:8000/posts/byId/${id}`, {
+    axios.delete(`https://groupomania-project-api.herokuapp.com/posts/byId/${id}`, {
       headers:{
         accessToken: localStorage.getItem("accessToken"),      
       },
@@ -85,7 +85,7 @@ function Post() {
   ////////      fonction for delete one comment    ///////////////
   const deleteComment = (id) =>{ 
   
-    axios.delete(`http://localhost:8000/comments/${id}`,{
+    axios.delete(`https://groupomania-project-api.herokuapp.com/comments/${id}`,{
       headers:{
         accessToken: localStorage.getItem("accessToken"),      
       },

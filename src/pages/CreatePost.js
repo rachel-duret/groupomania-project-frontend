@@ -32,7 +32,7 @@ function CreatePost() {
         /* let data = new initialValues();
         data.append('imageUrl', values.imageUrl) */
         console.log(data);
-        axios.post("http://localhost:8000/posts",data,{
+        axios.post("https://groupomania-project-api.herokuapp.com/posts",data,{
             headers:{
                 accessToken: localStorage.getItem("accessToken"),              
               }

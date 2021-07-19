@@ -17,7 +17,7 @@ function Home() {
         if ( !localStorage.getItem('accessToken')) {
           history.push('/login')
         } else{
-          axios.get("http://localhost:8000/posts")
+          axios.get("https://groupomania-project-api.herokuapp.com/posts")
         .then((response)=>{
          //console.log(response.data);
           setListOfPosts(response.data)//后端添加include Likes， 所有现在ListOfPosts里面已经包含Likes的数据
@@ -27,7 +27,7 @@ function Home() {
       }, []);
 
       const likePost = (postId) => {
-        axios.post("http://localhost:8000/likes",
+        axios.post("https://groupomania-project-api.herokuapp.com/likes",
         {PostId: postId},
         {headers: 
           {

@@ -11,7 +11,7 @@ function Profile() {
     const [listOfPosts, setListOfPosts] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/auth/profile/${id}`)// send a request to get user data
+        axios.get(`https://groupomania-project-api.herokuapp.com/auth/profile/${id}`)// send a request to get user data
         .then((response) => {
             setUsername(response.data.username)
             //console.log(response)
@@ -20,7 +20,7 @@ function Profile() {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/posts/byUserId/${id}`)// send a request to get all posts of this user
+        axios.get(`https://groupomania-project-api.herokuapp.com/posts/byUserId/${id}`)// send a request to get all posts of this user
         .then((response) => {
             console.log(response);
             setListOfPosts(response.data);

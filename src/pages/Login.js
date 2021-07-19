@@ -15,7 +15,7 @@ function Login() {
 
     const login = ()=>{
         const data = { username: username, email: email, password: password};
-        axios.post('http://localhost:8000/auth/login', data)
+        axios.post('https://groupomania-project-api.herokuapp.com/auth/login', data)
         .then((response)=>{
             console.log(response);
         
